@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 
+
 final FToast fToast = FToast();
 showToast(String? text) {
   Widget toast = Container(
@@ -18,3 +19,4 @@ showToast(String? text) {
     toastDuration: const Duration(seconds: 2),
   );
 }
+

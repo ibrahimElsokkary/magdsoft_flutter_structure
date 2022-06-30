@@ -9,9 +9,13 @@ import 'package:magdsoft_flutter_structure/business_logic/global_cubit/global_cu
 import 'package:magdsoft_flutter_structure/data/local/cache_helper.dart';
 import 'package:magdsoft_flutter_structure/data/remote/dio_helper.dart';
 import 'package:magdsoft_flutter_structure/presentation/router/app_router.dart';
+import 'package:magdsoft_flutter_structure/presentation/styles/colors.dart';
 import 'package:magdsoft_flutter_structure/presentation/widget/toast.dart';
+import 'package:material_color_gen/material_color_gen.dart';
 import 'package:sizer/sizer.dart';
 import 'package:intl/intl.dart';
+
+import 'data/network/requests/login_request.dart';
 
 
 late LocalizationDelegate delegate;
@@ -23,12 +27,13 @@ Future<void> main() async {
       DioHelper.init();
       await CacheHelper.init();
       final locale =
-          CacheHelper.getDataFromSharedPreference(key: 'language') ?? "ar";
+          CacheHelper.getDataFromSharedPreference(key: 'language') ?? "en";
       delegate = await LocalizationDelegate.create(
         fallbackLocale: locale,
         supportedLocales: ['ar', 'en'],
       );
       await delegate.changeLocale(Locale(locale));
+      
       runApp(MyApp(
         appRouter: AppRouter(),
       ));
@@ -74,10 +79,7 @@ class _MyAppState extends State<MyApp> {
           create: ((context) => GlobalCubit()),
         ),
       ],
-      child: BlocConsumer<GlobalCubit, GlobalState>(
-        listener: (context, state) {},
-        builder: (context, state) {
-          return Sizer(
+      child: Sizer(
             builder: (context, orientation, deviceType) {
               return LocalizedApp(
                 delegate,
@@ -96,6 +98,9 @@ class _MyAppState extends State<MyApp> {
                     supportedLocales: delegate.supportedLocales,
                     onGenerateRoute: widget.appRouter.onGenerateRoute,
                     theme: ThemeData(
+                      primarySwatch: AppColor.praimary.toMaterialColor(),
+                      
+                      elevatedButtonTheme: ElevatedButtonThemeData(style: ElevatedButton.styleFrom(primary: AppColor.praimary)),
                       fontFamily: 'cairo',
                       //scaffoldBackgroundColor: AppColors.white,
                       appBarTheme: const AppBarTheme(
@@ -110,9 +115,7 @@ class _MyAppState extends State<MyApp> {
                 }),
               );
             },
-          );
-        },
-      ),
+          )
     );
   }
 }
