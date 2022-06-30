@@ -7,8 +7,8 @@ magdsoft mobile application structure for flutter
 ## Getting Started
 
 This project is a starting point for a Flutter application.
-
-![Screenshot_1656611775](https://user-images.githubusercontent.com/107218787/176746610-d7e49df1-6344-45be-b64d-e4763824b760.png =250x250)
+<img src="[https://camo.githubusercontent.com/...](https://user-images.githubusercontent.com/107218787/176746610-d7e49df1-6344-45be-b64d-e4763824b760.png)" width="540" height="1170" />
+![Screenshot_1656611775](https://user-images.githubusercontent.com/107218787/176746610-d7e49df1-6344-45be-b64d-e4763824b760.png )
 ![Screenshot_1656611930](https://user-image![Screenshot_1656611819](https://user-images.githubusercontent.com/107218787/176746623-58be7549-2256-4006-aeb9-5c09379283b2.png)
 ![Screenshot_1656611824](https://user-images.githubusercontent.com/107218787/176746633-355fa741-cdcc-45ac-966f-c68761158e37.png)
 ![Screenshot_1656611869](https://user-images.githubusercontent.com/107218787/176746636-7cd7fab7-75bd-4386-ae32-a3ae47f8c8e1.png)
